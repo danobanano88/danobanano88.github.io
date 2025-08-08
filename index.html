@@ -1,311 +1,379 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" type="text/javascript"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniel Prieto – Product Owner</title>
+  <meta name="description" content="Product Owner en e‑commerce y SaaS. Carta de presentación con logros, proyectos y contacto. Multilingüe: ES/EN/DE." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020;          /* azul muy oscuro de fondo */
+      --card:#111731;        /* tarjetas */
+      --primary:#2dd4bf;     /* acento teal */
+      --primary-strong:#14b8a6;
+      --text:#e6eef6;        /* texto principal */
+      --muted:#96a2b4;       /* texto secundario */
+      --ring:#3b82f6;        /* azul acento */
+      --chip:#1f2937;        /* chips */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--primary)}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{
+      position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+      background:linear-gradient(180deg, rgba(11,16,32,.9), rgba(11,16,32,.55));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    header .row{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.3px}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 6px rgba(45,212,191,.15)}
+    .lang{display:flex;gap:8px;align-items:center}
+    .lang button{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text);padding:6px 10px;border-radius:999px;cursor:pointer}
+    .lang button.active{border-color:var(--primary);color:var(--primary);box-shadow:0 0 0 3px rgba(45,212,191,.15)}
 
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:40px 0}
+    .hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin:0 0 12px}
+    .hero p.lead{color:var(--muted);font-size:clamp(14px,2.5vw,18px);margin:0 0 22px}
+    .cta{display:flex;flex-wrap:wrap;gap:10px}
+    .btn{border:1px solid rgba(255,255,255,.16);padding:10px 14px;border-radius:12px;background:#0f162f; color:var(--text);cursor:pointer}
+    .btn.primary{background:var(--primary);color:#06231f;border-color:transparent;font-weight:700}
+    .btn:hover{transform:translateY(-1px)}
+    .portrait{position:relative}
+    .portrait img{width:100%;height:auto;border-radius:16px;display:block;border:1px solid rgba(255,255,255,.1)}
+    .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .chip{background:var(--chip);color:#dce7ef;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.07)}
 
+    .section{margin:34px 0}
+    .section h2{font-size:22px;margin:0 0 14px}
+    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 6;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:6px 0;color:var(--muted)}
+    .meta{display:flex;gap:12px;flex-wrap:wrap;color:#b9c4d6;font-size:13px;margin-top:8px}
+    .thumb{width:100%;height:170px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,.08);margin-bottom:10px}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+    .col-4{grid-column:span 4}
+    .col-6{grid-column:span 6}
+    .pill{background:transparent;border:1px dashed rgba(255,255,255,.18);border-radius:12px;padding:10px 12px}
+
+    footer{margin-top:40px;padding:24px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
+    .socials{display:flex;gap:12px;margin-top:10px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .card{grid-column:span 12}
+      .col-4, .col-6{grid-column:span 12}
+    }
+  </style>
 </head>
-<body class="not-loaded">
-    <div class="night"></div>
-    <div class="flowers">
-      <div class="flower flower--1">
-        <div class="flower__leafs flower__leafs--1">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-  
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-  
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-          <div class="flower__line__leaf flower__line__leaf--5"></div>
-          <div class="flower__line__leaf flower__line__leaf--6"></div>
-        </div>
-      </div>
-  
-      <div class="flower flower--2">
-        <div class="flower__leafs flower__leafs--2">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-  
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-  
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-        </div>
-      </div>
-  
-      <div class="flower flower--3">
-        <div class="flower__leafs flower__leafs--3">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-  
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-  
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-        </div>
-      </div>
-  
-      <div class="grow-ans" style="--d:1.2s">
-        <div class="flower__g-long">
-          <div class="flower__g-long__top"></div>
-          <div class="flower__g-long__bottom"></div>
-        </div>
-      </div>
-  
-      <div class="growing-grass">
-        <div class="flower__grass flower__grass--1">
-          <div class="flower__grass--top"></div>
-          <div class="flower__grass--bottom"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--1"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--2"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--3"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--4"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--5"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--6"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--7"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--8"></div>
-          <div class="flower__grass__overlay"></div>
-        </div>
-      </div>
-  
-      <div class="growing-grass">
-        <div class="flower__grass flower__grass--2">
-          <div class="flower__grass--top"></div>
-          <div class="flower__grass--bottom"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--1"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--2"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--3"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--4"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--5"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--6"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--7"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--8"></div>
-          <div class="flower__grass__overlay"></div>
-        </div>
-      </div>
-  
-      <div class="grow-ans" style="--d:2.4s">
-        <div class="flower__g-right flower__g-right--1">
-          <div class="leaf"></div>
-        </div>
-      </div>
-  
-      <div class="grow-ans" style="--d:2.8s">
-        <div class="flower__g-right flower__g-right--2">
-          <div class="leaf"></div>
-        </div>
-      </div>
-  
-      <div class="grow-ans" style="--d:2.8s">
-        <div class="flower__g-front">
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__line"></div>
-        </div>
-      </div>
-  
-      <div class="grow-ans" style="--d:3.2s">
-        <div class="flower__g-fr">
-          <div class="leaf"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--0">
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:2.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--1">
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.8s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--2">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--3">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--4">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--5">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--6">
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.4s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.6s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.8s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--7">
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.5s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
+<body>
+  <header>
+    <div class="container row">
+      <div class="brand"><span class="dot"></span> <span>Daniel Prieto · Product Owner</span></div>
+      <div class="lang" aria-label="language switcher">
+        <button data-lang="es" class="active">ES</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="de">DE</button>
       </div>
     </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1 data-i18n="title">Product Owner en e‑commerce y SaaS</h1>
+        <p class="lead" data-i18n="subtitle">Puente entre TI y negocio. Lidero integraciones, priorizo por valor y entrego productos que mueven métricas.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contacto" data-i18n="ctaPrimary">Hablemos</a>
+          <!-- Botones con data-link para cambiar HREF según idioma -->
+          <a class="btn" data-link="cv" href="assets/CV_Daniel_Prieto_ES.pdf" target="_blank" data-i18n="ctaCV">Descargar CV</a>
+          <a class="btn" data-link="cover" href="assets/Carta_Presentacion_Daniel_Prieto_ES.pdf" target="_blank" data-i18n="ctaCover">Carta de presentación</a>
+        </div>
+        <div class="chiprow">
+          <span class="chip">Agile/SCRUM</span>
+          <span class="chip">SaaS</span>
+          <span class="chip">API Integrations</span>
+          <span class="chip">Payments</span>
+          <span class="chip">Stakeholders</span>
+        </div>
+      </div>
+      <div class="portrait">
+        <!-- Cambia esta ruta si subes tu propia imagen -->
+        <img alt="Foto de Daniel Prieto" src="assets/profile.jpg" />
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section">
+      <h2 data-i18n="highlights">Logros destacados</h2>
+      <div class="cards">
+        <article class="card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Integraciones" />
+          <h3 data-i18n="h1">Pasarela de pagos regional</h3>
+          <p data-i18n="h1d">Implementación de gateway de pago para 4 países (VTEX, Janis, BAC, AWS). Optimización del checkout y habilitación de expansión e‑commerce.</p>
+          <div class="meta">VTEX · AWS · UAT · Go‑live</div>
+        </article>
+        <article class="card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Ecommerce" />
+          <h3 data-i18n="h2">Liderazgo de célula de desarrollo</h3>
+          <p data-i18n="h2d">Prioricé backlog por valor de negocio, convertí requerimientos en user stories y aseguré SLAs con proveedores para 14 sitios regionales.</p>
+          <div class="meta">Scrum · Backlog · SLAs</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS / TOOLS -->
+    <section class="section">
+      <h2 data-i18n="skills">Competencias y herramientas</h2>
+      <div class="grid">
+        <div class="col-6 pill">
+          <strong data-i18n="c1">Producto</strong>
+          <p class="muted" data-i18n="c1d">Roadmap, backlog, user stories, criterios de aceptación, KPIs, discovery y delivery.</p>
+        </div>
+        <div class="col-6 pill">
+          <strong data-i18n="c2">Tecnología</strong>
+          <p class="muted" data-i18n="c2d">SaaS, APIs REST, VTEX, AWS, integraciones de pago, low‑code, Git.</p>
+        </div>
+        <div class="col-6 pill">
+          <strong data-i18n="c3">Ejecución</strong>
+          <p class="muted" data-i18n="c3d">Scrum, ceremonias, gestión de riesgos, SLAs, alineación con marketing y ventas.</p>
+        </div>
+        <div class="col-6 pill">
+          <strong data-i18n="c4">Stakeholders</strong>
+          <p class="muted" data-i18n="c4d">Comunicación efectiva, negociación y reporte de bloqueos/avances.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section">
+      <h2 data-i18n="projects">Proyectos</h2>
+      <div class="cards">
+        <article class="card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200&auto=format&fit=crop" alt="Métricas" />
+          <h3 data-i18n="p1">Optimización de checkout</h3>
+          <p data-i18n="p1d">Eliminación de método de pago lento para reducir fricción y mejorar la experiencia de usuario.</p>
+          <div class="meta">A/B · UX · Conversion</div>
+        </article>
+        <article class="card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1551281044-8f74389ff42d?q=80&w=1200&auto=format&fit=crop" alt="Integraciones API" />
+          <h3 data-i18n="p2">Integraciones logísticas</h3>
+          <p data-i18n="p2d">Incorporación de proveedores vía APIs y low‑code; creación de API personalizada.</p>
+          <div class="meta">APIs · Low‑code</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contacto">
+      <h2 data-i18n="contact">Contacto</h2>
+      <p class="lead" data-i18n="contactD">¿Hablamos de tu producto? Estoy abierto a oportunidades y colaboraciones.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:danielprieto617@gmail.com">danielprieto617@gmail.com</a>
+        <a class="btn" href="tel:+525522522224">+52 55 2252 2224</a>
+        <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/danobanano88" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="y"></span> Daniel Prieto · Product Owner</div>
+      <div class="socials">
+        <a href="mailto:danielprieto617@gmail.com">Email</a>
+        <a href="https://github.com/danobanano88" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- i18n script encapsulado para evitar nombres globales duplicados -->
+  <script>
+    (() => {
+      // Año actual
+      document.getElementById('y').textContent = new Date().getFullYear();
+
+      // Diccionario multilingüe (encapsulado)
+      const dict = {
+        es: {
+          title:"Product Owner en e‑commerce y SaaS",
+          subtitle:"Puente entre TI y negocio. Lidero integraciones, priorizo por valor y entrego productos que mueven métricas.",
+          ctaPrimary:"Hablemos",
+          ctaCV:"Descargar CV",
+          ctaCover:"Carta de presentación",
+          highlights:"Logros destacados",
+          h1:"Pasarela de pagos regional",
+          h1d:"Implementación de gateway de pago para 4 países (VTEX, Janis, BAC, AWS). Optimización del checkout y habilitación de expansión e‑commerce.",
+          h2:"Liderazgo de célula de desarrollo",
+          h2d:"Prioricé backlog por valor de negocio, convertí requerimientos en user stories y aseguré SLAs con proveedores para 14 sitios regionales.",
+          skills:"Competencias y herramientas",
+          c1:"Producto",
+          c1d:"Roadmap, backlog, user stories, criterios de aceptación, KPIs, discovery y delivery.",
+          c2:"Tecnología",
+          c2d:"SaaS, APIs REST, VTEX, AWS, integraciones de pago, low‑code, Git.",
+          c3:"Ejecución",
+          c3d:"Scrum, ceremonias, gestión de riesgos, SLAs, alineación con marketing y ventas.",
+          c4:"Stakeholders",
+          c4d:"Comunicación efectiva, negociación y reporte de bloqueos/avances.",
+          projects:"Proyectos",
+          p1:"Optimización de checkout",
+          p1d:"Eliminación de método de pago lento para reducir fricción y mejorar la experiencia de usuario.",
+          p2:"Integraciones logísticas",
+          p2d:"Incorporación de proveedores vía APIs y low‑code; creación de API personalizada.",
+          contact:"Contacto",
+          contactD:"¿Hablamos de tu producto? Estoy abierto a oportunidades y colaboraciones."
+        },
+        en: {
+          title:"Product Owner in e‑commerce and SaaS",
+          subtitle:"Bridge between engineering and business. I lead integrations, prioritize by value and deliver products that move the metrics.",
+          ctaPrimary:"Let’s talk",
+          ctaCV:"Download CV",
+          ctaCover:"Cover letter",
+          highlights:"Highlights",
+          h1:"Regional payment gateway",
+          h1d:"Implemented a payment gateway across 4 countries (VTEX, Janis, BAC, AWS). Checkout optimization and e‑commerce expansion.",
+          h2:"Development squad leadership",
+          h2d:"Backlog prioritized by business value, converted requirements to user stories and enforced vendor SLAs for 14 regional sites.",
+          skills:"Skills & tools",
+          c1:"Product",
+          c1d:"Roadmap, backlog, user stories, acceptance criteria, KPIs, discovery & delivery.",
+          c2:"Technology",
+          c2d:"SaaS, REST APIs, VTEX, AWS, payment integrations, low‑code, Git.",
+          c3:"Execution",
+          c3d:"Scrum, ceremonies, risk management, SLAs, alignment with marketing & sales.",
+          c4:"Stakeholders",
+          c4d:"Clear communication, negotiation and status/blockers reporting.",
+          projects:"Projects",
+          p1:"Checkout optimization",
+          p1d:"Removed a slow payment method to reduce friction and improve user experience.",
+          p2:"Logistics integrations",
+          p2d:"Onboarded providers via APIs and low‑code; created a custom API.",
+          contact:"Contact",
+          contactD:"Let’s talk about your product. Open to opportunities and collaborations."
+        },
+        de: {
+          title:"Product Owner für E‑Commerce und SaaS",
+          subtitle:"Brücke zwischen IT und Business. Ich leite Integrationen, priorisiere nach Business‑Value und liefere Produkte mit messbarem Impact.",
+          ctaPrimary:"Kontakt",
+          ctaCV:"Lebenslauf herunterladen",
+          ctaCover:"Anschreiben",
+          highlights:"Highlights",
+          h1:"Regionale Zahlungsschnittstelle",
+          h1d:"Implementierung eines Payment‑Gateways in 4 Ländern (VTEX, Janis, BAC, AWS). Checkout‑Optimierung und E‑Commerce‑Ausbau.",
+          h2:"Leitung eines Entwicklungsteams",
+          h2d:"Backlog nach Geschäftswert priorisiert, Anforderungen in User Stories überführt und SLAs mit Anbietern durchgesetzt (14 regionale Sites).",
+          skills:"Kompetenzen & Tools",
+          c1:"Produkt",
+          c1d:"Roadmap, Backlog, User Stories, Akzeptanzkriterien, KPIs, Discovery & Delivery.",
+          c2:"Technologie",
+          c2d:"SaaS, REST‑APIs, VTEX, AWS, Payment‑Integrationen, Low‑Code, Git.",
+          c3:"Ausführung",
+          c3d:"Scrum, Zeremonien, Risikomanagement, SLAs, Abstimmung mit Marketing & Vertrieb.",
+          c4:"Stakeholder",
+          c4d:"Klare Kommunikation, Verhandlung und Reporting von Status/Blockern.",
+          projects:"Projekte",
+          p1:"Checkout‑Optimierung",
+          p1d:"Entfernung einer langsamen Zahlungsmethode zur Reduzierung von Friktion und Verbesserung der UX.",
+          p2:"Logistik‑Integrationen",
+          p2d:"Onboarding von Providern über APIs und Low‑Code; Entwicklung einer kundenspezifischen API.",
+          contact:"Kontakt",
+          contactD:"Lassen Sie uns über Ihr Produkt sprechen. Offen für Möglichkeiten und Zusammenarbeit."
+        }
+      };
+
+      // Mapeo de archivos por idioma (PDFs)
+      const fileMap = {
+        es: {
+          cv: 'assets/CV_Daniel_Prieto_ES.pdf',
+          cover: 'assets/Carta_Presentacion_Daniel_Prieto_ES.pdf'
+        },
+        en: {
+          cv: 'assets/CV_Daniel_Prieto_EN.pdf',
+          cover: 'assets/Cover_Letter_Daniel_Prieto_EN.pdf'
+        },
+        de: {
+          // Si no tienes versión DE aún, enviamos la EN
+          cv: 'assets/CV_Daniel_Prieto_EN.pdf',
+          cover: 'assets/Cover_Letter_Daniel_Prieto_EN.pdf'
+        }
+      };
+
+      // Utilidades y nodos (encapsulados)
+      const switchers = document.querySelectorAll('.lang button');
+      const i18nNodes = document.querySelectorAll('[data-i18n]');
+      const linkCV = document.querySelector('[data-link="cv"]');
+      const linkCover = document.querySelector('[data-link="cover"]');
+
+      function detectBrowserLang(){
+        const langs = navigator.languages || [navigator.language || navigator.userLanguage || 'es'];
+        const map = l => (l || '').toLowerCase().slice(0,2);
+        for(const l of langs){
+          const k = map(l);
+          if(['es','en','de'].includes(k)) return k;
+        }
+        return 'es';
+      }
+
+      function initialLang(){
+        return localStorage.getItem('lang') || document.documentElement.lang || detectBrowserLang() || 'es';
+      }
+
+      function setLang(lang){
+        switchers.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+        i18nNodes.forEach(el=>{
+          const key = el.getAttribute('data-i18n');
+          if(dict[lang] && dict[lang][key]) el.textContent = dict[lang][key];
+        });
+        // actualiza los enlaces a PDF según idioma
+        if(fileMap[lang]){
+          if(linkCV) linkCV.href = fileMap[lang].cv;
+          if(linkCover) linkCover.href = fileMap[lang].cover;
+        }
+        document.documentElement.lang = lang;
+        localStorage.setItem('lang', lang);
+      }
+
+      switchers.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+      setLang(initialLang());
+
+      // 🔎 Smoke tests
+      try {
+        const titleEl = document.querySelector('[data-i18n="title"]');
+        const before = titleEl.textContent;
+        const auto = (['es','en','de'].includes(detectBrowserLang()))
+        console.assert(auto, 'Auto‑detect debe devolver es/en/de');
+        setLang('en');
+        console.assert(titleEl.textContent !== before, 'El título debería cambiar al seleccionar EN');
+        console.assert(linkCV && linkCV.href.includes('EN'), 'El CV debería apuntar a EN al seleccionar EN');
+        setLang('es');
+        console.assert(document.documentElement.lang === 'es', 'lang del documento debe ser "es"');
+        console.info('[i18n] OK con archivos PDF por idioma');
+      } catch (e) {
+        console.warn('[i18n] Tests omitidos:', e);
+      }
+    })();
+  </script>
+
+  <!-- SEO JSON‑LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Daniel Prieto Huguenin",
+    "jobTitle": "Product Owner",
+    "url": "https://danobanano88.github.io",
+    "email": "mailto:danielprieto617@gmail.com",
+    "sameAs": [
+      "https://github.com/danobanano88"
+    ]
+  }
+  </script>
 </body>
 </html>
