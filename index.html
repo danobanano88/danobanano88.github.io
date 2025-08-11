@@ -64,11 +64,71 @@
     footer{margin-top:40px;padding:24px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
     .socials{display:flex;gap:12px;margin-top:10px}
 
-    /* responsive */
     @media (max-width:880px){
       .hero{grid-template-columns:1fr;}
       .card{grid-column:span 12}
       .col-4, .col-6{grid-column:span 12}
+    }
+
+    /* ===== Botpress ===== */
+    .bpFab { display: none !important; }
+    .bpWebchat {
+      position: fixed !important;
+      bottom: 84px !important; /* deja espacio para el botón */
+      right: 20px !important;
+      width: 360px !important;
+      height: 520px !important;
+      max-height: calc(100vh - 120px) !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      box-shadow: 0 10px 24px rgba(0,0,0,.35) !important;
+      z-index: 9999 !important;
+    }
+    .chat-launcher {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 9999px;
+      background: var(--primary);
+      color: #06231f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      cursor: pointer;
+      z-index: 10000;
+      border: 1px solid rgba(255,255,255,.12);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .chat-launcher:hover { transform: translateY(-2px); }
+    .chat-launcher[aria-expanded="true"] { background: var(--primary-strong); }
+    .chat-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: #ef4444;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      min-width: 18px;
+      text-align: center;
+      border-radius: 9999px;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(0,0,0,.4);
+    }
+    @media (max-width: 480px){
+      .bpWebchat{
+        left: 12px !important;
+        right: 12px !important;
+        width: auto !important;
+        height: 65vh !important;
+        bottom: 76px !important;
+      }
+      .chat-launcher{ bottom: 12px; right: 12px; }
     }
   </style>
 </head>
@@ -92,7 +152,6 @@
         <p class="lead" data-i18n="subtitle">Puente entre TI y negocio. Lidero integraciones, priorizo por valor y entrego productos que mueven métricas.</p>
         <div class="cta">
           <a class="btn primary" href="#contacto" data-i18n="ctaPrimary">Hablemos</a>
-          <!-- Botones con data-link para cambiar HREF según idioma -->
           <a class="btn" data-link="cv" href="assets/CV_Daniel_Prieto_ES.pdf" target="_blank" data-i18n="ctaCV">Descargar CV</a>
           <a class="btn" data-link="cover" href="assets/Carta_Presentacion_Daniel_Prieto_ES.pdf" target="_blank" data-i18n="ctaCover">Carta de presentación</a>
         </div>
@@ -105,7 +164,6 @@
         </div>
       </div>
       <div class="portrait">
-        <!-- Cambia esta ruta si subes tu propia imagen -->
         <img alt="Foto de Daniel Prieto" src="assets/profile.jpg" />
       </div>
     </section>
@@ -114,12 +172,12 @@
     <section class="section">
       <h2 data-i18n="highlights">Logros destacados</h2>
       <div class="cards">
-       <article class="card">
-  <img class="thumb" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200&auto=format&fit=crop" alt="Pasarela de pagos regional" />
-  <h3 data-i18n="h1">Pasarela de pagos regional</h3>
-  <p data-i18n="h1d">Implementación de gateway de pago para 4 países (VTEX, Janis, BAC, AWS). Optimización del checkout y habilitación de expansión e-commerce.</p>
-  <div class="meta">VTEX · AWS · UAT · Go-live</div>
-</article>
+        <article class="card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200&auto=format&fit=crop" alt="Pasarela de pagos regional" />
+          <h3 data-i18n="h1">Pasarela de pagos regional</h3>
+          <p data-i18n="h1d">Implementación de gateway de pago para 4 países (VTEX, Janis, BAC, AWS). Optimización del checkout y habilitación de expansión e‑commerce.</p>
+          <div class="meta">VTEX · AWS · UAT · Go-live</div>
+        </article>
         <article class="card">
           <img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Ecommerce" />
           <h3 data-i18n="h2">Liderazgo de célula de desarrollo</h3>
@@ -162,11 +220,11 @@
           <p data-i18n="p1d">Eliminación de método de pago lento para reducir fricción y mejorar la experiencia de usuario.</p>
           <div class="meta">A/B · UX · Conversion</div>
         </article>
-       <article class="card">
-        <img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Integraciones API" />
-        <h3 data-i18n="p2">Integraciones logísticas</h3>
-        <p data-i18n="p2d">Incorporación de proveedores vía APIs y low-code; creación de API personalizada.</p>
-        <div class="meta">APIs · Low-code</div>
+        <article class="card">
+          <img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Integraciones API" />
+          <h3 data-i18n="p2">Integraciones logísticas</h3>
+          <p data-i18n="p2d">Incorporación de proveedores vía APIs y low‑code; creación de API personalizada.</p>
+          <div class="meta">APIs · Low-code</div>
         </article>
       </div>
     </section>
@@ -195,187 +253,74 @@
     </div>
   </footer>
 
-  <!-- i18n script encapsulado para evitar nombres globales duplicados -->
+  <!-- i18n script encapsulado -->
   <script>
     (() => {
-      // Año actual
       document.getElementById('y').textContent = new Date().getFullYear();
-
-      // Diccionario multilingüe (encapsulado)
       const dict = {
-        es: {
-          title:"Product Owner en e‑commerce y SaaS",
-          subtitle:"Puente entre TI y negocio. Lidero integraciones, priorizo por valor y entrego productos que mueven métricas.",
-          ctaPrimary:"Hablemos",
-          ctaCV:"Descargar CV",
-          ctaCover:"Carta de presentación",
-          highlights:"Logros destacados",
-          h1:"Pasarela de pagos regional",
-          h1d:"Implementación de gateway de pago para 4 países (VTEX, Janis, BAC, AWS). Optimización del checkout y habilitación de expansión e‑commerce.",
-          h2:"Liderazgo de célula de desarrollo",
-          h2d:"Prioricé backlog por valor de negocio, convertí requerimientos en user stories y aseguré SLAs con proveedores para 14 sitios regionales.",
-          skills:"Competencias y herramientas",
-          c1:"Producto",
-          c1d:"Roadmap, backlog, user stories, criterios de aceptación, KPIs, discovery y delivery.",
-          c2:"Tecnología",
-          c2d:"SaaS, APIs REST, VTEX, AWS, integraciones de pago, low‑code, Git.",
-          c3:"Ejecución",
-          c3d:"Scrum, ceremonias, gestión de riesgos, SLAs, alineación con marketing y ventas.",
-          c4:"Stakeholders",
-          c4d:"Comunicación efectiva, negociación y reporte de bloqueos/avances.",
-          projects:"Proyectos",
-          p1:"Optimización de checkout",
-          p1d:"Eliminación de método de pago lento para reducir fricción y mejorar la experiencia de usuario.",
-          p2:"Integraciones logísticas",
-          p2d:"Incorporación de proveedores vía APIs y low‑code; creación de API personalizada.",
-          contact:"Contacto",
-          contactD:"¿Hablamos de tu producto? Estoy abierto a oportunidades y colaboraciones."
-        },
-        en: {
-          title:"Product Owner in e‑commerce and SaaS",
-          subtitle:"Bridge between engineering and business. I lead integrations, prioritize by value and deliver products that move the metrics.",
-          ctaPrimary:"Let’s talk",
-          ctaCV:"Download CV",
-          ctaCover:"Cover letter",
-          highlights:"Highlights",
-          h1:"Regional payment gateway",
-          h1d:"Implemented a payment gateway across 4 countries (VTEX, Janis, BAC, AWS). Checkout optimization and e‑commerce expansion.",
-          h2:"Development squad leadership",
-          h2d:"Backlog prioritized by business value, converted requirements to user stories and enforced vendor SLAs for 14 regional sites.",
-          skills:"Skills & tools",
-          c1:"Product",
-          c1d:"Roadmap, backlog, user stories, acceptance criteria, KPIs, discovery & delivery.",
-          c2:"Technology",
-          c2d:"SaaS, REST APIs, VTEX, AWS, payment integrations, low‑code, Git.",
-          c3:"Execution",
-          c3d:"Scrum, ceremonies, risk management, SLAs, alignment with marketing & sales.",
-          c4:"Stakeholders",
-          c4d:"Clear communication, negotiation and status/blockers reporting.",
-          projects:"Projects",
-          p1:"Checkout optimization",
-          p1d:"Removed a slow payment method to reduce friction and improve user experience.",
-          p2:"Logistics integrations",
-          p2d:"Onboarded providers via APIs and low‑code; created a custom API.",
-          contact:"Contact",
-          contactD:"Let’s talk about your product. Open to opportunities and collaborations."
-        },
-        de: {
-          title:"Product Owner für E‑Commerce und SaaS",
-          subtitle:"Brücke zwischen IT und Business. Ich leite Integrationen, priorisiere nach Business‑Value und liefere Produkte mit messbarem Impact.",
-          ctaPrimary:"Kontakt",
-          ctaCV:"Lebenslauf herunterladen",
-          ctaCover:"Anschreiben",
-          highlights:"Highlights",
-          h1:"Regionale Zahlungsschnittstelle",
-          h1d:"Implementierung eines Payment‑Gateways in 4 Ländern (VTEX, Janis, BAC, AWS). Checkout‑Optimierung und E‑Commerce‑Ausbau.",
-          h2:"Leitung eines Entwicklungsteams",
-          h2d:"Backlog nach Geschäftswert priorisiert, Anforderungen in User Stories überführt und SLAs mit Anbietern durchgesetzt (14 regionale Sites).",
-          skills:"Kompetenzen & Tools",
-          c1:"Produkt",
-          c1d:"Roadmap, Backlog, User Stories, Akzeptanzkriterien, KPIs, Discovery & Delivery.",
-          c2:"Technologie",
-          c2d:"SaaS, REST‑APIs, VTEX, AWS, Payment‑Integrationen, Low‑Code, Git.",
-          c3:"Ausführung",
-          c3d:"Scrum, Zeremonien, Risikomanagement, SLAs, Abstimmung mit Marketing & Vertrieb.",
-          c4:"Stakeholder",
-          c4d:"Klare Kommunikation, Verhandlung und Reporting von Status/Blockern.",
-          projects:"Projekte",
-          p1:"Checkout‑Optimierung",
-          p1d:"Entfernung einer langsamen Zahlungsmethode zur Reduzierung von Friktion und Verbesserung der UX.",
-          p2:"Logistik‑Integrationen",
-          p2d:"Onboarding von Providern über APIs und Low‑Code; Entwicklung einer kundenspezifischen API.",
-          contact:"Kontakt",
-          contactD:"Lassen Sie uns über Ihr Produkt sprechen. Offen für Möglichkeiten und Zusammenarbeit."
-        }
+        es:{title:"Product Owner en e‑commerce y SaaS",subtitle:"Puente entre TI y negocio. Lidero integraciones, priorizo por valor y entrego productos que mueven métricas.",ctaPrimary:"Hablemos",ctaCV:"Descargar CV",ctaCover:"Carta de presentación",highlights:"Logros destacados",h1:"Pasarela de pagos regional",h1d:"Implementación de gateway de pago para 4 países (VTEX, Janis, BAC, AWS). Optimización del checkout y habilitación de expansión e‑commerce.",h2:"Liderazgo de célula de desarrollo",h2d:"Prioricé backlog por valor de negocio, convertí requerimientos en user stories y aseguré SLAs con proveedores para 14 sitios regionales.",skills:"Competencias y herramientas",c1:"Producto",c1d:"Roadmap, backlog, user stories, criterios de aceptación, KPIs, discovery y delivery.",c2:"Tecnología",c2d:"SaaS, APIs REST, VTEX, AWS, integraciones de pago, low‑code, Git.",c3:"Ejecución",c3d:"Scrum, ceremonias, gestión de riesgos, SLAs, alineación con marketing y ventas.",c4:"Stakeholders",c4d:"Comunicación efectiva, negociación y reporte de bloqueos/avances.",projects:"Proyectos",p1:"Optimización de checkout",p1d:"Eliminación de método de pago lento para reducir fricción y mejorar la experiencia de usuario.",p2:"Integraciones logísticas",p2d:"Incorporación de proveedores vía APIs y low‑code; creación de API personalizada.",contact:"Contacto",contactD:"¿Hablamos de tu producto? Estoy abierto a oportunidades y colaboraciones."},
+        en:{title:"Product Owner in e‑commerce and SaaS",subtitle:"Bridge between engineering and business. I lead integrations, prioritize by value and deliver products that move the metrics.",ctaPrimary:"Let’s talk",ctaCV:"Download CV",ctaCover:"Cover letter",highlights:"Highlights",h1:"Regional payment gateway",h1d:"Implemented a payment gateway across 4 countries (VTEX, Janis, BAC, AWS). Checkout optimization and e‑commerce expansion.",h2:"Development squad leadership",h2d:"Backlog prioritized by business value, converted requirements to user stories and enforced vendor SLAs for 14 regional sites.",skills:"Skills & tools",c1:"Product",c1d:"Roadmap, backlog, user stories, acceptance criteria, KPIs, discovery & delivery.",c2:"Technology",c2d:"SaaS, REST APIs, VTEX, AWS, payment integrations, low‑code, Git.",c3:"Execution",c3d:"Scrum, ceremonies, risk management, SLAs, alignment with marketing & sales.",c4:"Stakeholders",c4d:"Clear communication, negotiation and status/blockers reporting.",projects:"Projects",p1:"Checkout optimization",p1d:"Removed a slow payment method to reduce friction and improve user experience.",p2:"Logistics integrations",p2d:"Onboarded providers via APIs and low‑code; created a custom API.",contact:"Contact",contactD:"Let’s talk about your product. Open to opportunities and collaborations."},
+        de:{title:"Product Owner für E‑Commerce und SaaS",subtitle:"Brücke zwischen IT und Business. Ich leite Integrationen, priorisiere nach Business‑Value und liefere Produkte mit messbarem Impact.",ctaPrimary:"Kontakt",ctaCV:"Lebenslauf herunterladen",ctaCover:"Anschreiben",highlights:"Highlights",h1:"Regionale Zahlungsschnittstelle",h1d:"Implementierung eines Payment‑Gateways in 4 Ländern (VTEX, Janis, BAC, AWS). Checkout‑Optimierung und E‑Commerce‑Ausbau.",h2:"Leitung eines Entwicklungsteams",h2d:"Backlog nach Geschäftswert priorisiert, Anforderungen in User Stories überführt und SLAs mit Anbietern durchgesetzt (14 regionale Sites).",skills:"Kompetenzen & Tools",c1:"Produkt",c1d:"Roadmap, Backlog, User Stories, Akzeptanzkriterien, KPIs, Discovery & Delivery.",c2:"Technologie",c2d:"SaaS, REST‑APIs, VTEX, AWS, Payment‑Integrationen, Low‑Code, Git.",c3:"Ausführung",c3d:"Scrum, Zeremonien, Risikomanagement, SLAs, Abstimmung mit Marketing & Vertrieb.",c4:"Stakeholder",c4d:"Klare Kommunikation, Verhandlung und Reporting von Status/Blockern.",projects:"Projekte",p1:"Checkout‑Optimierung",p1d:"Entfernung einer langsamen Zahlungsmethode zur Reduzierung von Friktion und Verbesserung der UX.",p2:"Logistik‑Integrationen",p2d:"Onboarding von Providern über APIs und Low‑Code; Entwicklung einer kundenspezifischen API.",contact:"Kontakt",contactD:"Lassen Sie uns über Ihr Produkt sprechen. Offen für Möglichkeiten und Zusammenarbeit."}
       };
-
-      // Mapeo de archivos por idioma (PDFs)
       const fileMap = {
-        es: {
-          cv: 'assets/CV_Daniel_Prieto_ES.pdf',
-          cover: 'assets/Carta_Presentacion_Daniel_Prieto_ES.pdf'
-        },
-        en: {
-          cv: 'assets/CV_Daniel_Prieto_EN.pdf',
-          cover: 'assets/Cover_Letter_Daniel_Prieto_EN.pdf'
-        },
-        de: {
-          // Si no tienes versión DE aún, enviamos la EN
-          cv: 'assets/CV_Daniel_Prieto_EN.pdf',
-          cover: 'assets/Cover_Letter_Daniel_Prieto_EN.pdf'
-        }
+        es:{cv:'assets/CV_Daniel_Prieto_ES.pdf',cover:'assets/Carta_Presentacion_Daniel_Prieto_ES.pdf'},
+        en:{cv:'assets/CV_Daniel_Prieto_EN.pdf',cover:'assets/Cover_Letter_Daniel_Prieto_EN.pdf'},
+        de:{cv:'assets/CV_Daniel_Prieto_EN.pdf',cover:'assets/Cover_Letter_Daniel_Prieto_EN.pdf'}
       };
-
-      // Utilidades y nodos (encapsulados)
       const switchers = document.querySelectorAll('.lang button');
       const i18nNodes = document.querySelectorAll('[data-i18n]');
       const linkCV = document.querySelector('[data-link="cv"]');
       const linkCover = document.querySelector('[data-link="cover"]');
-
       function detectBrowserLang(){
         const langs = navigator.languages || [navigator.language || navigator.userLanguage || 'es'];
         const map = l => (l || '').toLowerCase().slice(0,2);
-        for(const l of langs){
-          const k = map(l);
-          if(['es','en','de'].includes(k)) return k;
-        }
+        for(const l of langs){ const k = map(l); if(['es','en','de'].includes(k)) return k; }
         return 'es';
       }
-
-      function initialLang(){
-        return localStorage.getItem('lang') || document.documentElement.lang || detectBrowserLang() || 'es';
-      }
-
+      function initialLang(){ return localStorage.getItem('lang') || document.documentElement.lang || detectBrowserLang() || 'es'; }
       function setLang(lang){
         switchers.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
-        i18nNodes.forEach(el=>{
-          const key = el.getAttribute('data-i18n');
-          if(dict[lang] && dict[lang][key]) el.textContent = dict[lang][key];
-        });
-        // actualiza los enlaces a PDF según idioma
-        if(fileMap[lang]){
-          if(linkCV) linkCV.href = fileMap[lang].cv;
-          if(linkCover) linkCover.href = fileMap[lang].cover;
-        }
-        document.documentElement.lang = lang;
-        localStorage.setItem('lang', lang);
+        i18nNodes.forEach(el=>{ const key = el.getAttribute('data-i18n'); if(dict[lang] && dict[lang][key]) el.textContent = dict[lang][key]; });
+        if(fileMap[lang]){ if(linkCV) linkCV.href=fileMap[lang].cv; if(linkCover) linkCover.href=fileMap[lang].cover; }
+        document.documentElement.lang = lang; localStorage.setItem('lang', lang);
       }
-
       switchers.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
       setLang(initialLang());
-
-      // 🔎 Smoke tests
-      try {
-        const titleEl = document.querySelector('[data-i18n="title"]');
-        const before = titleEl.textContent;
-        const auto = (['es','en','de'].includes(detectBrowserLang()))
-        console.assert(auto, 'Auto‑detect debe devolver es/en/de');
-        setLang('en');
-        console.assert(titleEl.textContent !== before, 'El título debería cambiar al seleccionar EN');
-        console.assert(linkCV && linkCV.href.includes('EN'), 'El CV debería apuntar a EN al seleccionar EN');
-        setLang('es');
-        console.assert(document.documentElement.lang === 'es', 'lang del documento debe ser "es"');
-        console.info('[i18n] OK con archivos PDF por idioma');
-      } catch (e) {
-        console.warn('[i18n] Tests omitidos:', e);
-      }
     })();
   </script>
 
   <!-- SEO JSON‑LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Daniel Prieto Huguenin",
-    "jobTitle": "Product Owner",
-    "url": "https://danobanano88.github.io",
-    "email": "mailto:danielprieto617@gmail.com",
-    "sameAs": [
-  "https://github.com/danobanano88",
-  "https://www.linkedin.com/in/norberto-prieto-6388b6264"
-]
-  }
+  {"@context":"https://schema.org","@type":"Person","name":"Daniel Prieto Huguenin","jobTitle":"Product Owner","url":"https://danobanano88.github.io","email":"mailto:danielprieto617@gmail.com","sameAs":["https://github.com/danobanano88","https://www.linkedin.com/in/norberto-prieto-6388b6264"]}
   </script>
+
+  <!-- ===== Botón flotante + Webchat Botpress ===== -->
+  <button id="chat-launcher" class="chat-launcher" aria-label="Abrir chat" aria-expanded="false" title="Abrir chat">💬
+    <span id="chat-badge" class="chat-badge" style="display:none;">0</span>
+  </button>
+
+  <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+  <script src="https://files.bpcontent.cloud/2025/08/11/05/20250811051519-AJMCESUX.js" defer></script>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('chat-launcher');
+      const badge = document.getElementById('chat-badge');
+      const titles = { es:{open:'Abrir chat',close:'Cerrar chat'}, en:{open:'Open chat',close:'Close chat'}, de:{open:'Chat öffnen',close:'Chat schließen'} };
+      let isOpen=false, unread=0;
+      function lang(){ return document.documentElement.lang || 'es'; }
+      function refreshTitle(){ const l=lang(); btn.title = isOpen ? titles[l].close : titles[l].open; }
+      function setExpanded(state){ isOpen=state; btn.setAttribute('aria-expanded', String(state)); refreshTitle(); if(state){ unread=0; badge.style.display='none'; } }
+      btn.addEventListener('click', ()=>{ if(!window.botpress) return; isOpen ? window.botpress.close() : window.botpress.open(); });
+      window.addEventListener('load', ()=>{
+        if(!window.botpress) return; // En Canvas puede bloquear scripts externos
+        window.botpress.on('webchat:ready', ()=>{ setExpanded(false); });
+        window.botpress.on('webchat:opened', ()=>{ setExpanded(true); });
+        window.botpress.on('webchat:closed', ()=>{ setExpanded(false); });
+        window.botpress.on('message', ()=>{ if(!isOpen){ unread++; badge.textContent=String(unread); badge.style.display='inline-block'; } });
+      });
+    })();
+  </script>
+  <!-- ===== Fin Botpress ===== -->
 </body>
 </html>
