@@ -4,323 +4,353 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daniel Prieto – Product Owner</title>
-  <meta name="description" content="Product Owner en e‑commerce y SaaS. Carta de presentación con logros, proyectos y contacto. Multilingüe: ES/EN/DE." />
+  <meta name="description" content="Product Owner especializado en e‑commerce y SaaS. Portfolio con logros, proyectos y contacto. Disponible en ES/EN/DE." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b1020;          /* azul muy oscuro de fondo */
-      --card:#111731;        /* tarjetas */
-      --primary:#2dd4bf;     /* acento teal */
-      --primary-strong:#14b8a6;
-      --text:#e6eef6;        /* texto principal */
-      --muted:#96a2b4;       /* texto secundario */
-      --ring:#3b82f6;        /* azul acento */
-      --chip:#1f2937;        /* chips */
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:var(--primary)}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{
-      position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
-      background:linear-gradient(180deg, rgba(11,16,32,.9), rgba(11,16,32,.55));
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    header .row{display:flex;align-items:center;gap:16px;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.3px}
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 6px rgba(45,212,191,.15)}
-    .lang{display:flex;gap:8px;align-items:center}
-    .lang button{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text);padding:6px 10px;border-radius:999px;cursor:pointer}
-    .lang button.active{border-color:var(--primary);color:var(--primary);box-shadow:0 0 0 3px rgba(45,212,191,.15)}
-
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:40px 0}
-    .hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin:0 0 12px}
-    .hero p.lead{color:var(--muted);font-size:clamp(14px,2.5vw,18px);margin:0 0 22px}
-    .cta{display:flex;flex-wrap:wrap;gap:10px}
-    .btn{border:1px solid rgba(255,255,255,.16);padding:10px 14px;border-radius:12px;background:#0f162f; color:var(--text);cursor:pointer}
-    .btn.primary{background:var(--primary);color:#06231f;border-color:transparent;font-weight:700}
-    .btn:hover{transform:translateY(-1px)}
-    .portrait{position:relative}
-    .portrait img{width:100%;height:auto;border-radius:16px;display:block;border:1px solid rgba(255,255,255,.1)}
-    .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-    .chip{background:var(--chip);color:#dce7ef;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.07)}
-
-    .section{margin:34px 0}
-    .section h2{font-size:22px;margin:0 0 14px}
-    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .card{grid-column:span 6;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
-    .card h3{margin:0 0 6px;font-size:18px}
-    .card p{margin:6px 0;color:var(--muted)}
-    .meta{display:flex;gap:12px;flex-wrap:wrap;color:#b9c4d6;font-size:13px;margin-top:8px}
-    .thumb{width:100%;height:170px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,.08);margin-bottom:10px}
-
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-    .col-4{grid-column:span 4}
-    .col-6{grid-column:span 6}
-    .pill{background:transparent;border:1px dashed rgba(255,255,255,.18);border-radius:12px;padding:10px 12px}
-
-    footer{margin-top:40px;padding:24px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
-    .socials{display:flex;gap:12px;margin-top:10px}
-
-    @media (max-width:880px){
-      .hero{grid-template-columns:1fr;}
-      .card{grid-column:span 12}
-      .col-4, .col-6{grid-column:span 12}
-    }
-
-    /* ===== Botpress ===== */
-    .bpFab { display: none !important; }
-    .bpWebchat {
-      position: fixed !important;
-      bottom: 84px !important; /* deja espacio para el botón */
-      right: 20px !important;
-      width: 360px !important;
-      height: 520px !important;
-      max-height: calc(100vh - 120px) !important;
-      border-radius: 12px !important;
-      overflow: hidden !important;
-      box-shadow: 0 10px 24px rgba(0,0,0,.35) !important;
-      z-index: 9999 !important;
-    }
-    .chat-launcher {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 56px;
-      height: 56px;
-      border-radius: 9999px;
-      background: var(--primary);
-      color: #06231f;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      font-weight: 700;
-      box-shadow: 0 8px 24px rgba(0,0,0,.35);
-      cursor: pointer;
-      z-index: 10000;
-      border: 1px solid rgba(255,255,255,.12);
-      transition: transform .12s ease, box-shadow .12s ease;
-    }
-    .chat-launcher:hover { transform: translateY(-2px); }
-    .chat-launcher[aria-expanded="true"] { background: var(--primary-strong); }
-    .chat-badge {
-      position: absolute;
-      top: -4px;
-      right: -4px;
-      background: #ef4444;
-      color: white;
-      font-size: 12px;
-      padding: 2px 6px;
-      min-width: 18px;
-      text-align: center;
-      border-radius: 9999px;
-      font-weight: 700;
-      box-shadow: 0 2px 6px rgba(0,0,0,.4);
-    }
-    @media (max-width: 480px){
-      .bpWebchat{
-        left: 12px !important;
-        right: 12px !important;
-        width: auto !important;
-        height: 65vh !important;
-        bottom: 76px !important;
-      }
-      .chat-launcher{ bottom: 12px; right: 12px; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Daniel Prieto","jobTitle":"Product Owner","url":"https://danobanano88.github.io","email":"mailto:danielprieto617@gmail.com","sameAs":["https://github.com/danobanano88","https://www.linkedin.com/in/norberto-prieto-6388b6264"]}
+  </script>
 </head>
 <body>
-  <header>
-    <div class="container row">
-      <div class="brand"><span class="dot"></span> <span>Daniel Prieto · Product Owner</span></div>
-      <div class="lang" aria-label="language switcher">
-        <button data-lang="es" class="active">ES</button>
-        <button data-lang="en">EN</button>
-        <button data-lang="de">DE</button>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="Inicio">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-name">Daniel Prieto</span>
+        <span class="brand-role" data-i18n="brandRole">Product Owner</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#highlights" data-i18n="navHighlights">Logros</a>
+        <a href="#skills" data-i18n="navSkills">Skills</a>
+        <a href="#projects" data-i18n="navProjects">Proyectos</a>
+        <a href="#contact" data-i18n="navContact">Contacto</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Selector de idioma">
+        <button data-lang="es" class="active" aria-pressed="true">ES</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+        <button data-lang="de" aria-pressed="false">DE</button>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <h1 data-i18n="title">Product Owner en e‑commerce y SaaS</h1>
-        <p class="lead" data-i18n="subtitle">Puente entre TI y negocio. Lidero integraciones, priorizo por valor y entrego productos que mueven métricas.</p>
-        <div class="cta">
-          <a class="btn primary" href="#contacto" data-i18n="ctaPrimary">Hablemos</a>
-          <a class="btn" data-link="cv" href="assets/CV_Daniel_Prieto_ES.pdf" target="_blank" data-i18n="ctaCV">Descargar CV</a>
-          <a class="btn" data-link="cover" href="assets/Carta_Presentacion_Daniel_Prieto_ES.pdf" target="_blank" data-i18n="ctaCover">Carta de presentación</a>
-        </div>
-        <div class="chiprow">
-          <span class="chip">Agile/SCRUM</span>
-          <span class="chip">SaaS</span>
-          <span class="chip">API Integrations</span>
-          <span class="chip">Payments</span>
-          <span class="chip">Stakeholders</span>
-        </div>
-      </div>
-      <div class="portrait">
-        <img alt="Foto de Daniel Prieto" src="assets/profile.jpg" />
-      </div>
-    </section>
+  <main>
 
-    <!-- HIGHLIGHTS -->
-    <section class="section">
-      <h2 data-i18n="highlights">Logros destacados</h2>
-      <div class="cards">
-        <article class="card">
-          <img class="thumb" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200&auto=format&fit=crop" alt="Pasarela de pagos regional" />
-          <h3 data-i18n="h1">Pasarela de pagos regional</h3>
-          <p data-i18n="h1d">Implementación de gateway de pago para 4 países (VTEX, Janis, BAC, AWS). Optimización del checkout y habilitación de expansión e‑commerce.</p>
-          <div class="meta">VTEX · AWS · UAT · Go-live</div>
-        </article>
-        <article class="card">
-          <img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Ecommerce" />
-          <h3 data-i18n="h2">Liderazgo de célula de desarrollo</h3>
-          <p data-i18n="h2d">Prioricé backlog por valor de negocio, convertí requerimientos en user stories y aseguré SLAs con proveedores para 14 sitios regionales.</p>
-          <div class="meta">Scrum · Backlog · SLAs</div>
-        </article>
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-label="Presentación">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-glow hero-glow--1"></div>
+        <div class="hero-glow hero-glow--2"></div>
+        <div class="hero-grid"></div>
       </div>
-    </section>
-
-    <!-- SKILLS / TOOLS -->
-    <section class="section">
-      <h2 data-i18n="skills">Competencias y herramientas</h2>
-      <div class="grid">
-        <div class="col-6 pill">
-          <strong data-i18n="c1">Producto</strong>
-          <p class="muted" data-i18n="c1d">Roadmap, backlog, user stories, criterios de aceptación, KPIs, discovery y delivery.</p>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="hero-badge">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            <span data-i18n="heroBadge">Disponible para nuevas oportunidades</span>
+          </p>
+          <h1 class="hero-title" data-i18n="title">Product Owner en e‑commerce y SaaS</h1>
+          <p class="hero-subtitle" data-i18n="subtitle">Puente entre TI y negocio. Lidero integraciones, priorizo por valor y entrego productos que mueven métricas.</p>
+          <div class="hero-chips" aria-label="Tecnologías y áreas">
+            <span class="chip">Agile / Scrum</span>
+            <span class="chip">SaaS</span>
+            <span class="chip">API Integrations</span>
+            <span class="chip">Payments</span>
+            <span class="chip">VTEX</span>
+            <span class="chip">AWS</span>
+          </div>
+          <div class="hero-cta">
+            <a class="btn btn--primary" href="#contact" data-i18n="ctaPrimary">Hablemos</a>
+            <a class="btn btn--outline" data-link="cv" href="assets/CV_Daniel_Prieto_ES.pdf" target="_blank" rel="noopener" data-i18n="ctaCV">Descargar CV</a>
+            <a class="btn btn--ghost" data-link="cover" href="assets/Carta_Presentacion_Daniel_Prieto_ES.pdf" target="_blank" rel="noopener" data-i18n="ctaCover">Carta de presentación</a>
+          </div>
         </div>
-        <div class="col-6 pill">
-          <strong data-i18n="c2">Tecnología</strong>
-          <p class="muted" data-i18n="c2d">SaaS, APIs REST, VTEX, AWS, integraciones de pago, low‑code, Git.</p>
-        </div>
-        <div class="col-6 pill">
-          <strong data-i18n="c3">Ejecución</strong>
-          <p class="muted" data-i18n="c3d">Scrum, ceremonias, gestión de riesgos, SLAs, alineación con marketing y ventas.</p>
-        </div>
-        <div class="col-6 pill">
-          <strong data-i18n="c4">Stakeholders</strong>
-          <p class="muted" data-i18n="c4d">Comunicación efectiva, negociación y reporte de bloqueos/avances.</p>
+        <div class="hero-portrait">
+          <div class="portrait-frame">
+            <img src="assets/profile.jpg" alt="Daniel Prieto, Product Owner" width="400" height="400" />
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section">
-      <h2 data-i18n="projects">Proyectos</h2>
-      <div class="cards">
-        <article class="card">
-          <img class="thumb" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200&auto=format&fit=crop" alt="Métricas" />
-          <h3 data-i18n="p1">Optimización de checkout</h3>
-          <p data-i18n="p1d">Eliminación de método de pago lento para reducir fricción y mejorar la experiencia de usuario.</p>
-          <div class="meta">A/B · UX · Conversion</div>
-        </article>
-        <article class="card">
-          <img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Integraciones API" />
-          <h3 data-i18n="p2">Integraciones logísticas</h3>
-          <p data-i18n="p2d">Incorporación de proveedores vía APIs y low‑code; creación de API personalizada.</p>
-          <div class="meta">APIs · Low-code</div>
-        </article>
+    <!-- ===== STATS ===== -->
+    <div class="stats-bar" aria-label="Métricas clave">
+      <div class="container stats-inner">
+        <div class="stat">
+          <span class="stat-num">4</span>
+          <span class="stat-label" data-i18n="stat1">Países de expansión</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-num">14</span>
+          <span class="stat-label" data-i18n="stat2">Sitios regionales</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-num">5+</span>
+          <span class="stat-label" data-i18n="stat3">Años de experiencia</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label" data-i18n="stat4">Idiomas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== HIGHLIGHTS ===== -->
+    <section class="section" id="highlights" aria-labelledby="highlights-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="highlightsTag">Experiencia</span>
+          <h2 id="highlights-title" data-i18n="highlights">Logros destacados</h2>
+          <p class="section-desc" data-i18n="highlightsDesc">Proyectos con impacto real en el negocio.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img"
+                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop"
+                alt="Terminal de pagos" loading="lazy" />
+              <div class="card-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag">VTEX</span>
+                <span class="tag">AWS</span>
+                <span class="tag">UAT</span>
+              </div>
+              <h3 data-i18n="h1">Pasarela de pagos regional</h3>
+              <p data-i18n="h1d">Implementación de gateway de pago para 4 países (VTEX, Janis, BAC, AWS). Optimización del checkout y habilitación de expansión e‑commerce.</p>
+              <div class="card-meta">
+                <span class="meta-icon" aria-hidden="true">🌎</span>
+                <span data-i18n="h1meta">Go-live en 4 mercados</span>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+                alt="Equipo de desarrollo colaborando" loading="lazy" />
+              <div class="card-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag">Scrum</span>
+                <span class="tag">Backlog</span>
+                <span class="tag">SLAs</span>
+              </div>
+              <h3 data-i18n="h2">Liderazgo de célula de desarrollo</h3>
+              <p data-i18n="h2d">Prioricé backlog por valor de negocio, convertí requerimientos en user stories y aseguré SLAs con proveedores para 14 sitios regionales.</p>
+              <div class="card-meta">
+                <span class="meta-icon" aria-hidden="true">🏢</span>
+                <span data-i18n="h2meta">14 sitios regionales</span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contacto">
-      <h2 data-i18n="contact">Contacto</h2>
-      <p class="lead" data-i18n="contactD">¿Hablamos de tu producto? Estoy abierto a oportunidades y colaboraciones.</p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:danielprieto617@gmail.com">danielprieto617@gmail.com</a>
-        <a class="btn" href="tel:+525522522224">+52 55 2252 2224</a>
-        <a class="btn" href="https://www.linkedin.com/in/norberto-prieto-6388b6264" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/danobanano88" target="_blank" rel="noopener">GitHub</a>
+    <!-- ===== SKILLS ===== -->
+    <section class="section section--alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="skillsTag">Competencias</span>
+          <h2 id="skills-title" data-i18n="skills">Skills y herramientas</h2>
+          <p class="section-desc" data-i18n="skillsDesc">Desde la estrategia de producto hasta la ejecución técnica.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+            </div>
+            <strong data-i18n="c1">Producto</strong>
+            <p data-i18n="c1d">Roadmap, backlog, user stories, criterios de aceptación, KPIs, discovery y delivery.</p>
+            <div class="skill-chips">
+              <span class="chip chip--sm">Roadmap</span>
+              <span class="chip chip--sm">User Stories</span>
+              <span class="chip chip--sm">KPIs</span>
+              <span class="chip chip--sm">Discovery</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <strong data-i18n="c2">Tecnología</strong>
+            <p data-i18n="c2d">SaaS, APIs REST, VTEX, AWS, integraciones de pago, low‑code, Git.</p>
+            <div class="skill-chips">
+              <span class="chip chip--sm">VTEX</span>
+              <span class="chip chip--sm">AWS</span>
+              <span class="chip chip--sm">REST APIs</span>
+              <span class="chip chip--sm">Git</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <strong data-i18n="c3">Ejecución</strong>
+            <p data-i18n="c3d">Scrum, ceremonias, gestión de riesgos, SLAs, alineación con marketing y ventas.</p>
+            <div class="skill-chips">
+              <span class="chip chip--sm">Scrum</span>
+              <span class="chip chip--sm">Riesgos</span>
+              <span class="chip chip--sm">SLAs</span>
+              <span class="chip chip--sm">Go-live</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <strong data-i18n="c4">Stakeholders</strong>
+            <p data-i18n="c4d">Comunicación efectiva, negociación y reporte de bloqueos/avances.</p>
+            <div class="skill-chips">
+              <span class="chip chip--sm">Negociación</span>
+              <span class="chip chip--sm">Reporting</span>
+              <span class="chip chip--sm">C-Level</span>
+              <span class="chip chip--sm">Proveedores</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="projectsTag">Portfolio</span>
+          <h2 id="projects-title" data-i18n="projects">Proyectos</h2>
+          <p class="section-desc" data-i18n="projectsDesc">Casos donde lideré desde el problema hasta la solución.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+                alt="Dashboard de analíticas de conversión" loading="lazy" />
+              <div class="card-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag">A/B Testing</span>
+                <span class="tag">UX</span>
+                <span class="tag">Conversion</span>
+              </div>
+              <h3 data-i18n="p1">Optimización de checkout</h3>
+              <p data-i18n="p1d">Eliminación de método de pago lento para reducir fricción y mejorar la experiencia de usuario.</p>
+              <div class="card-meta">
+                <span class="meta-icon" aria-hidden="true">📈</span>
+                <span data-i18n="p1meta">Mejora en conversión</span>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img"
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop"
+                alt="Almacén logístico con tecnología" loading="lazy" />
+              <div class="card-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag">APIs</span>
+                <span class="tag">Low-code</span>
+                <span class="tag">Logistics</span>
+              </div>
+              <h3 data-i18n="p2">Integraciones logísticas</h3>
+              <p data-i18n="p2d">Incorporación de proveedores vía APIs y low‑code; creación de API personalizada.</p>
+              <div class="card-meta">
+                <span class="meta-icon" aria-hidden="true">🔗</span>
+                <span data-i18n="p2meta">Múltiples proveedores integrados</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="contactTag">Conectemos</span>
+          <h2 id="contact-title" data-i18n="contact">Contacto</h2>
+          <p class="section-desc" data-i18n="contactD">¿Hablamos de tu producto? Estoy abierto a oportunidades y colaboraciones.</p>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:danielprieto617@gmail.com">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-label" data-i18n="contactEmail">Email</div>
+              <div class="contact-value">danielprieto617@gmail.com</div>
+            </div>
+          </a>
+          <a class="contact-card" href="tel:+525522522224">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.4 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91A16 16 0 0 0 14 16l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17.28z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label" data-i18n="contactPhone">Teléfono</div>
+              <div class="contact-value">+52 55 2252 2224</div>
+            </div>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/norberto-prieto-6388b6264" target="_blank" rel="noopener">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">norberto-prieto</div>
+            </div>
+          </a>
+          <a class="contact-card" href="https://github.com/danobanano88" target="_blank" rel="noopener">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value">danobanano88</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <div class="container">
-      <div>© <span id="y"></span> Daniel Prieto · Product Owner</div>
-      <div class="socials">
-        <a href="mailto:danielprieto617@gmail.com">Email</a>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Daniel Prieto · Product Owner</span>
+      </div>
+      <div class="footer-copy">© <span id="y"></span></div>
+      <nav class="footer-links" aria-label="Links de contacto">
+        <a href="mailto:danielprieto617@gmail.com" data-i18n="contactEmail">Email</a>
         <a href="https://github.com/danobanano88" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/norberto-prieto-6388b6264" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+      </nav>
     </div>
   </footer>
 
-  <!-- i18n script encapsulado -->
-  <script>
-    (() => {
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const dict = {
-        es:{title:"Product Owner en e‑commerce y SaaS",subtitle:"Puente entre TI y negocio. Lidero integraciones, priorizo por valor y entrego productos que mueven métricas.",ctaPrimary:"Hablemos",ctaCV:"Descargar CV",ctaCover:"Carta de presentación",highlights:"Logros destacados",h1:"Pasarela de pagos regional",h1d:"Implementación de gateway de pago para 4 países (VTEX, Janis, BAC, AWS). Optimización del checkout y habilitación de expansión e‑commerce.",h2:"Liderazgo de célula de desarrollo",h2d:"Prioricé backlog por valor de negocio, convertí requerimientos en user stories y aseguré SLAs con proveedores para 14 sitios regionales.",skills:"Competencias y herramientas",c1:"Producto",c1d:"Roadmap, backlog, user stories, criterios de aceptación, KPIs, discovery y delivery.",c2:"Tecnología",c2d:"SaaS, APIs REST, VTEX, AWS, integraciones de pago, low‑code, Git.",c3:"Ejecución",c3d:"Scrum, ceremonias, gestión de riesgos, SLAs, alineación con marketing y ventas.",c4:"Stakeholders",c4d:"Comunicación efectiva, negociación y reporte de bloqueos/avances.",projects:"Proyectos",p1:"Optimización de checkout",p1d:"Eliminación de método de pago lento para reducir fricción y mejorar la experiencia de usuario.",p2:"Integraciones logísticas",p2d:"Incorporación de proveedores vía APIs y low‑code; creación de API personalizada.",contact:"Contacto",contactD:"¿Hablamos de tu producto? Estoy abierto a oportunidades y colaboraciones."},
-        en:{title:"Product Owner in e‑commerce and SaaS",subtitle:"Bridge between engineering and business. I lead integrations, prioritize by value and deliver products that move the metrics.",ctaPrimary:"Let’s talk",ctaCV:"Download CV",ctaCover:"Cover letter",highlights:"Highlights",h1:"Regional payment gateway",h1d:"Implemented a payment gateway across 4 countries (VTEX, Janis, BAC, AWS). Checkout optimization and e‑commerce expansion.",h2:"Development squad leadership",h2d:"Backlog prioritized by business value, converted requirements to user stories and enforced vendor SLAs for 14 regional sites.",skills:"Skills & tools",c1:"Product",c1d:"Roadmap, backlog, user stories, acceptance criteria, KPIs, discovery & delivery.",c2:"Technology",c2d:"SaaS, REST APIs, VTEX, AWS, payment integrations, low‑code, Git.",c3:"Execution",c3d:"Scrum, ceremonies, risk management, SLAs, alignment with marketing & sales.",c4:"Stakeholders",c4d:"Clear communication, negotiation and status/blockers reporting.",projects:"Projects",p1:"Checkout optimization",p1d:"Removed a slow payment method to reduce friction and improve user experience.",p2:"Logistics integrations",p2d:"Onboarded providers via APIs and low‑code; created a custom API.",contact:"Contact",contactD:"Let’s talk about your product. Open to opportunities and collaborations."},
-        de:{title:"Product Owner für E‑Commerce und SaaS",subtitle:"Brücke zwischen IT und Business. Ich leite Integrationen, priorisiere nach Business‑Value und liefere Produkte mit messbarem Impact.",ctaPrimary:"Kontakt",ctaCV:"Lebenslauf herunterladen",ctaCover:"Anschreiben",highlights:"Highlights",h1:"Regionale Zahlungsschnittstelle",h1d:"Implementierung eines Payment‑Gateways in 4 Ländern (VTEX, Janis, BAC, AWS). Checkout‑Optimierung und E‑Commerce‑Ausbau.",h2:"Leitung eines Entwicklungsteams",h2d:"Backlog nach Geschäftswert priorisiert, Anforderungen in User Stories überführt und SLAs mit Anbietern durchgesetzt (14 regionale Sites).",skills:"Kompetenzen & Tools",c1:"Produkt",c1d:"Roadmap, Backlog, User Stories, Akzeptanzkriterien, KPIs, Discovery & Delivery.",c2:"Technologie",c2d:"SaaS, REST‑APIs, VTEX, AWS, Payment‑Integrationen, Low‑Code, Git.",c3:"Ausführung",c3d:"Scrum, Zeremonien, Risikomanagement, SLAs, Abstimmung mit Marketing & Vertrieb.",c4:"Stakeholder",c4d:"Klare Kommunikation, Verhandlung und Reporting von Status/Blockern.",projects:"Projekte",p1:"Checkout‑Optimierung",p1d:"Entfernung einer langsamen Zahlungsmethode zur Reduzierung von Friktion und Verbesserung der UX.",p2:"Logistik‑Integrationen",p2d:"Onboarding von Providern über APIs und Low‑Code; Entwicklung einer kundenspezifischen API.",contact:"Kontakt",contactD:"Lassen Sie uns über Ihr Produkt sprechen. Offen für Möglichkeiten und Zusammenarbeit."}
-      };
-      const fileMap = {
-        es:{cv:'assets/CV_Daniel_Prieto_ES.pdf',cover:'assets/Carta_Presentacion_Daniel_Prieto_ES.pdf'},
-        en:{cv:'assets/CV_Daniel_Prieto_EN.pdf',cover:'assets/Cover_Letter_Daniel_Prieto_EN.pdf'},
-        de:{cv:'assets/CV_Daniel_Prieto_EN.pdf',cover:'assets/Cover_Letter_Daniel_Prieto_EN.pdf'}
-      };
-      const switchers = document.querySelectorAll('.lang button');
-      const i18nNodes = document.querySelectorAll('[data-i18n]');
-      const linkCV = document.querySelector('[data-link="cv"]');
-      const linkCover = document.querySelector('[data-link="cover"]');
-      function detectBrowserLang(){
-        const langs = navigator.languages || [navigator.language || navigator.userLanguage || 'es'];
-        const map = l => (l || '').toLowerCase().slice(0,2);
-        for(const l of langs){ const k = map(l); if(['es','en','de'].includes(k)) return k; }
-        return 'es';
-      }
-      function initialLang(){ return localStorage.getItem('lang') || document.documentElement.lang || detectBrowserLang() || 'es'; }
-      function setLang(lang){
-        switchers.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
-        i18nNodes.forEach(el=>{ const key = el.getAttribute('data-i18n'); if(dict[lang] && dict[lang][key]) el.textContent = dict[lang][key]; });
-        if(fileMap[lang]){ if(linkCV) linkCV.href=fileMap[lang].cv; if(linkCover) linkCover.href=fileMap[lang].cover; }
-        document.documentElement.lang = lang; localStorage.setItem('lang', lang);
-      }
-      switchers.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-      setLang(initialLang());
-    })();
-  </script>
-
-  <!-- SEO JSON‑LD -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Daniel Prieto Huguenin","jobTitle":"Product Owner","url":"https://danobanano88.github.io","email":"mailto:danielprieto617@gmail.com","sameAs":["https://github.com/danobanano88","https://www.linkedin.com/in/norberto-prieto-6388b6264"]}
-  </script>
-
-  <!-- ===== Botón flotante + Webchat Botpress ===== -->
-  <button id="chat-launcher" class="chat-launcher" aria-label="Abrir chat" aria-expanded="false" title="Abrir chat">💬
-    <span id="chat-badge" class="chat-badge" style="display:none;">0</span>
+  <!-- ===== CHAT LAUNCHER ===== -->
+  <button id="chat-launcher" class="chat-launcher" aria-label="Abrir chat" aria-expanded="false">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span id="chat-badge" class="chat-badge" aria-label="mensajes no leídos" style="display:none">0</span>
   </button>
 
+  <script src="script.js" defer></script>
   <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
   <script src="https://files.bpcontent.cloud/2025/08/11/05/20250811051519-AJMCESUX.js" defer></script>
-
-  <script>
-    (function(){
-      const btn = document.getElementById('chat-launcher');
-      const badge = document.getElementById('chat-badge');
-      const titles = { es:{open:'Abrir chat',close:'Cerrar chat'}, en:{open:'Open chat',close:'Close chat'}, de:{open:'Chat öffnen',close:'Chat schließen'} };
-      let isOpen=false, unread=0;
-      function lang(){ return document.documentElement.lang || 'es'; }
-      function refreshTitle(){ const l=lang(); btn.title = isOpen ? titles[l].close : titles[l].open; }
-      function setExpanded(state){ isOpen=state; btn.setAttribute('aria-expanded', String(state)); refreshTitle(); if(state){ unread=0; badge.style.display='none'; } }
-      btn.addEventListener('click', ()=>{ if(!window.botpress) return; isOpen ? window.botpress.close() : window.botpress.open(); });
-      window.addEventListener('load', ()=>{
-        if(!window.botpress) return; // En Canvas puede bloquear scripts externos
-        window.botpress.on('webchat:ready', ()=>{ setExpanded(false); });
-        window.botpress.on('webchat:opened', ()=>{ setExpanded(true); });
-        window.botpress.on('webchat:closed', ()=>{ setExpanded(false); });
-        window.botpress.on('message', ()=>{ if(!isOpen){ unread++; badge.textContent=String(unread); badge.style.display='inline-block'; } });
-      });
-    })();
-  </script>
-  <!-- ===== Fin Botpress ===== -->
 </body>
 </html>
